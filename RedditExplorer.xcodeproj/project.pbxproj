@@ -19,6 +19,7 @@
 		752E743E1C572C3600199386 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = 752E743D1C572C3600199386 /* Listing.m */; };
 		758E14781C5738D500C9DE4D /* ListingCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758E14771C5738D500C9DE4D /* ListingCommentsViewController.m */; };
 		758E147B1C57409200C9DE4D /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 758E147A1C57409200C9DE4D /* Comment.m */; };
+		758E14841C57663C00C9DE4D /* UIViewController+ListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758E14831C57663C00C9DE4D /* UIViewController+ListingCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		758E14771C5738D500C9DE4D /* ListingCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListingCommentsViewController.m; sourceTree = "<group>"; };
 		758E14791C57409200C9DE4D /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		758E147A1C57409200C9DE4D /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		758E14821C57663C00C9DE4D /* UIViewController+ListingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ListingCell.h"; sourceTree = "<group>"; };
+		758E14831C57663C00C9DE4D /* UIViewController+ListingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ListingCell.m"; sourceTree = "<group>"; };
 		E84C6BEE19D95264896367FF /* Pods-RedditExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditExplorer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedditExplorer/Pods-RedditExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +177,8 @@
 				752E74371C5722EA00199386 /* ListingsViewController.m */,
 				758E14761C5738D500C9DE4D /* ListingCommentsViewController.h */,
 				758E14771C5738D500C9DE4D /* ListingCommentsViewController.m */,
+				758E14821C57663C00C9DE4D /* UIViewController+ListingCell.h */,
+				758E14831C57663C00C9DE4D /* UIViewController+ListingCell.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758E14841C57663C00C9DE4D /* UIViewController+ListingCell.m in Sources */,
 				752E743E1C572C3600199386 /* Listing.m in Sources */,
 				758E14781C5738D500C9DE4D /* ListingCommentsViewController.m in Sources */,
 				752E743B1C57230B00199386 /* RedditApiClient.m in Sources */,

@@ -13,7 +13,7 @@
 #import <SVPullToRefresh.h>
 #import "ListingCommentsViewController.h"
 #import <EXTScope.h>
-#import <UIImageView+AFNetworking.h>
+#import "UIViewController+ListingCell.h"
 
 @interface ListingsViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
@@ -75,21 +75,15 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if ( !cell ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.textLabel.numberOfLines = 3;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
     Listing *listing = self.listings[indexPath.row];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:listing.imageURL] placeholderImage:[UIImage imageNamed:@"imagePlaceholder"]];
-    cell.textLabel.text = listing.title;
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath listing:listing];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
+
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return ListingCellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -13,6 +13,11 @@
 #import <PureLayout.h>
 #import <SVPullToRefresh.h>
 #import <EXTScope.h>
+#import "UIViewController+ListingCell.h"
+typedef NS_ENUM(NSUInteger, ListingSection) {
+    ListingSectionMain,
+    ListingSectionComments
+};
 
 @interface ListingCommentsViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
@@ -35,7 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Comments";
+    self.title = self.listing.subReddit;
     self.comments = [NSMutableArray array];
     
     [self.view addSubview:self.tableView];
@@ -80,14 +85,24 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if ( section == ListingSectionMain) {
+        //listing section
+        return 1;
+    }
     return self.comments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ( indexPath.section == ListingSectionMain) {
+        UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath listing:self.listing];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        return cell;
+    }
+    
     static NSString *cellIdentifier = @"CommentCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if ( !cell ) {
@@ -103,8 +118,17 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if ( section == ListingSectionMain) {
+        return nil;
+    }
+    return @"Comments";
+}
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ( indexPath.section == ListingSectionMain) {
+        return ListingCellHeight;
+    }
     return 100;
 }
 
