@@ -73,11 +73,14 @@
     return self.listings.count;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if ( !cell ) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.textLabel.numberOfLines = 3;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     Listing *listing = self.listings[indexPath.row];
     [cell.imageView setImageWithURL:[NSURL URLWithString:listing.imageURL] placeholderImage:[UIImage imageNamed:@"imagePlaceholder"]];
@@ -85,6 +88,10 @@
     return cell;
 }
 #pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     Listing *listing = self.listings[indexPath.row];

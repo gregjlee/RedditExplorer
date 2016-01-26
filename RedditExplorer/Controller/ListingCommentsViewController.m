@@ -73,8 +73,8 @@
         return _tableView;
     }
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.delegate = self;
     return _tableView;
 }
 
@@ -87,23 +87,25 @@
     return self.comments.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
+    static NSString *cellIdentifier = @"CommentCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if ( !cell ) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         cell.textLabel.font = [UIFont systemFontOfSize:12];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
+        cell.detailTextLabel.numberOfLines = 4;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     Comment *comment = self.comments[indexPath.row];
     cell.textLabel.text = comment.author;
     cell.detailTextLabel.text = comment.body;
-    cell.detailTextLabel.numberOfLines = 2;
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 
 - (void)didReceiveMemoryWarning {

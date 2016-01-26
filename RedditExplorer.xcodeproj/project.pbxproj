@@ -10,7 +10,6 @@
 		5CBE2D3C7BA83332B94741D4 /* libPods-RedditExplorer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DE8E815483D88BD59D8702 /* libPods-RedditExplorer.a */; };
 		752E74011C571FAA00199386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 752E74001C571FAA00199386 /* main.m */; };
 		752E74041C571FAA00199386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 752E74031C571FAA00199386 /* AppDelegate.m */; };
-		752E740A1C571FAA00199386 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752E74081C571FAA00199386 /* Main.storyboard */; };
 		752E740C1C571FAA00199386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752E740B1C571FAA00199386 /* Assets.xcassets */; };
 		752E740F1C571FAA00199386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752E740D1C571FAA00199386 /* LaunchScreen.storyboard */; };
 		752E741A1C571FAA00199386 /* RedditExplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 752E74191C571FAA00199386 /* RedditExplorerTests.m */; };
@@ -46,7 +45,6 @@
 		752E74001C571FAA00199386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		752E74021C571FAA00199386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		752E74031C571FAA00199386 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		752E74091C571FAA00199386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		752E740B1C571FAA00199386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		752E740E1C571FAA00199386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752E74101C571FAA00199386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				752E74351C57229E00199386 /* View */,
 				752E74021C571FAA00199386 /* AppDelegate.h */,
 				752E74031C571FAA00199386 /* AppDelegate.m */,
-				752E74081C571FAA00199386 /* Main.storyboard */,
 				752E740B1C571FAA00199386 /* Assets.xcassets */,
 				752E740D1C571FAA00199386 /* LaunchScreen.storyboard */,
 				752E74101C571FAA00199386 /* Info.plist */,
@@ -324,7 +321,6 @@
 			files = (
 				752E740F1C571FAA00199386 /* LaunchScreen.storyboard in Resources */,
 				752E740C1C571FAA00199386 /* Assets.xcassets in Resources */,
-				752E740A1C571FAA00199386 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,14 +435,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		752E74081C571FAA00199386 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				752E74091C571FAA00199386 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		752E740D1C571FAA00199386 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
