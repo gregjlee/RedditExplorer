@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ListingsViewController.h
 //  RedditExplorer
 //
 //  Created by Gregory Lee on 1/25/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ListingsViewController : UIViewController
 
 @end
-
